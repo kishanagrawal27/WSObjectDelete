@@ -1,0 +1,138 @@
+{
+    "page": {
+      "number": 1,
+      "size": 100
+    },
+    "query": {
+      "category": "${category}",
+      "parentId": null,
+      "columns": [
+        {
+          "id": "project.${category}.external_id",
+          "schema": {
+            "category": "${category}",
+            "fid": "external_id",
+            "sid": "project",
+            "listId": null,
+            "dtype": "text",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.name",
+          "schema": {
+            "category": "${category}",
+            "fid": "name",
+            "sid": "project",
+            "listId": null,
+            "dtype": "text",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.description",
+          "schema": {
+            "category": "${category}",
+            "fid": "description",
+            "sid": "project",
+            "listId": null,
+            "dtype": "rich_text",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.stage",
+          "schema": {
+            "category": "${category}",
+            "fid": "stage",
+            "sid": "project",
+            "listId": null,
+            "dtype": "selection_list",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.created_at",
+          "schema": {
+            "category": "${category}",
+            "fid": "created_at",
+            "sid": "project",
+            "listId": null,
+            "dtype": "date_time",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.created_by",
+          "schema": {
+            "category": "${category}",
+            "fid": "created_by",
+            "sid": "project",
+            "listId": null,
+            "dtype": "person",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.updated_at",
+          "schema": {
+            "category": "${category}",
+            "fid": "updated_at",
+            "sid": "project",
+            "listId": null,
+            "dtype": "date_time",
+            "rep": false,
+            "isStdSection": true
+          }
+        },
+        {
+          "id": "project.${category}.updated_by",
+          "schema": {
+            "category": "${category}",
+            "fid": "updated_by",
+            "sid": "project",
+            "listId": null,
+            "dtype": "person",
+            "rep": false,
+            "isStdSection": true
+          }
+        }
+      ],
+      "sort": [],
+      "filters": {
+        "op": "AND",
+        "fieldFilters": [],
+        "group": [
+          {
+            "op": "OR",
+            "fieldFilters": [
+              {
+                "colId": "project.${category}.created_at",
+                "type": "DATE_TIME",
+                "filter": {
+                  "op": "LESS_THAN",
+                  "negate": false,
+                  "values": [
+                    "${previous_2_date}T00:00:00"
+                  ]
+                },
+                "criteria": "value"
+              }
+            ],
+            "group": []
+          }
+        ]
+      },
+      "companies": [],
+      "isSectionList": false,
+      "templateId": null,
+      "projectAccessRole": "all",
+      "isMetaDataRequested": false
+    }
+  }
